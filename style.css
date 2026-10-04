@@ -1,0 +1,239 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  color: #1f2937;
+}
+
+/* Navbar — Flexbox: logo left, links right */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.navbar .logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.navbar .nav-links a {
+  margin-left: 24px;
+  text-decoration: none;
+  color: #1f2937;
+}
+
+/* Hero — Flexbox: text on the left, image on the right */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding: 80px 40px;
+  background-color: #eff6ff;
+}
+
+.hero-content {
+  max-width: 480px;
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #4b5563;
+  margin-bottom: 24px;
+}
+
+.hero .cta {
+  background-color: #2563eb;
+  color: white;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 12px;
+}
+
+/* Features — Grid: 3 equal columns */
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 60px 40px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.feature {
+  text-align: center;
+}
+
+.feature h3 {
+  margin-bottom: 8px;
+}
+
+.feature p {
+  color: #4b5563;
+  font-size: 14px;
+}
+
+/* Services — Grid: 4 equal columns */
+.services {
+  padding: 60px 40px;
+  background-color: #f9fafb;
+  text-align: center;
+}
+
+.services h2 {
+  margin-bottom: 32px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.service-card h4 {
+  margin-bottom: 8px;
+}
+
+.service-card p {
+  color: #4b5563;
+  font-size: 14px;
+}
+
+/* Highlights — Grid with mismatched spans, one card takes a 2x2 block */
+.highlights {
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.highlights h2 {
+  margin-bottom: 32px;
+}
+
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 140px;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.highlight-card {
+  background-color: #f9fafb;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  text-align: left;
+}
+
+.highlight-card h3 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.highlight-card p {
+  color: #4b5563;
+  font-size: 14px;
+}
+
+.highlight-card.featured {
+  grid-column: span 2;
+  grid-row: span 2;
+  background-color: #2563eb;
+  color: white;
+}
+
+.highlight-card.featured h3 {
+  font-size: 40px;
+}
+
+.highlight-card.featured p {
+  color: #dbeafe;
+}
+
+/* Footer — Flexbox: three columns spread out */
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 32px 40px;
+  background-color: #111827;
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+footer .footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+footer a {
+  color: #9ca3af;
+  text-decoration: none;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 640px) {
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .highlight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .highlight-card.featured {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
